@@ -726,7 +726,7 @@ app.get('/logout', (req, res) => {
     res.redirect('/login'); // Redirect to the login page after logout
   });
 });
-const serverPort = 3000;
+const serverPort = 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening on port ${serverPort}`);
 });
