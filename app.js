@@ -214,15 +214,15 @@ app.get('/login', (req, res) => {
   res.render('landing');
 });
 // Catch-all route for preventing direct URL access
-app.use((req, res, next) => {
-  const publicRoutes = ['/login','/reset-page']; // Add other public routes here if needed
-  if (req.isAuthenticated() || publicRoutes.includes(req.path)) {
-    // If the user is authenticated or the route is a public route, continue to the next middleware or route handler
-    return next();
-  }
-  // If the user is not authenticated and the route is not a public route, redirect to the login page
-  res.redirect('/login');
-});
+// app.use((req, res, next) => {
+//   const publicRoutes = ['/login','/reset-page']; // Add other public routes here if needed
+//   if (req.isAuthenticated() || publicRoutes.includes(req.path)) {
+//     // If the user is authenticated or the route is a public route, continue to the next middleware or route handler
+//     return next();
+//   }
+//   // If the user is not authenticated and the route is not a public route, redirect to the login page
+//   res.redirect('/login');
+// });
 // // Login route to handle user and admin logins
 app.post('/login', (req, res, next) => {
   const userType = req.body.userType;
